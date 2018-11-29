@@ -3,33 +3,46 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Glasy</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 </head>
 <body>
 	<header class="header">
-		<nav class="main-nav">
-			<a class="logo" href="index.html"><img class="logo__img" src="img/logo.png" alt="Glasy" width="154" height="64"></a>
+		<nav class="main-nav header__main-nav">
+			<a class="logo main-nav__logo" href="#"><img class="logo__img" src="img/logo.png" alt="Glasy" width="154" height="64"></a>
 			<ul class="main-nav__list">
-				<li class="main-nav__item"><a class="main-nav__link main-nav__link--active" src="#">Каталог</a>
+				<li class="main-nav__item main-nav__item--catalog main-nav__item--active">
+					<a class="main-nav__link" href="#">Каталог</a>
 					<ul class="main-nav__sub-list">
-						<li class="main-nav__sub-item"><a src="#">Новинки</a></li>
-						<li class="main-nav__sub-item"><a src="#">Сливочное</a></li>
-						<li class="main-nav__sub-item"><a src="#">Щербеты</a></li>
-						<li class="main-nav__sub-item"><a src="#">Фруктовый лед</a></li>
-						<li class="main-nav__sub-item"><a src="#">Мелорин</a></li>
+						<li class="main-nav__sub-item main-nav__sub-item--new"><a src="#">Новинки</a></li>
+						<li class="main-nav__sub-item main-nav__sub-item--active"><a href="catalog.html">Сливочное</a></li>
+						<li class="main-nav__sub-item"><a href="#">Щербеты</a></li>
+						<li class="main-nav__sub-item"><a href="#">Фруктовый лед</a></li>
+						<li class="main-nav__sub-item"><a href="#">Мелорин</a></li>
 					</ul>
 				</li>
-				<li class="main-nav__item"><a class="main-nav__link" src="#">Доставка и оплата</a></li>
-				<li class="main-nav__item"><a class="main-nav__link" src="#">О компании</a></li>
+				<li class="main-nav__item"><a class="main-nav__link" href="#">Доставка и оплата</a></li>
+				<li class="main-nav__item"><a class="main-nav__link" href="#">О Компании</a></li>
 			</ul>
 		</nav>
 		<form class="form-search" action="#" method="get">
-			<!---.form-search__input-submit-->
-			<div class="form-search__decoration">Поиск</div>
-			<input class="form-search__input-search" type="search" name="search">
+			<div class="form-search__decoration">Поиск
+				<svg class="search-icon">
+				  <use xlink:href="img/sprite.svg#search-icon"></use>
+				</svg>
+			</div>
+			<div class="form-search__inner">
+				<input class="int form-search__input" type="search" name="search" placeholder="Что ищем?">
+			</div>
 		</form>
-		<div class="user-block">
+		<div class="user-block header__user-block">
 			<div class="login">
-				<a class="link link--login">Вход</a>
+				<a class="link link--login">
+					<svg class="user-block__icon login-icon">
+					  <use xlink:href="img/sprite.svg#login-icon"></use>
+					</svg>Вход
+				</a>
 				<form class="form-login" action="#" method="get">
 					<input class="form-login__input" type="text" name="email" placeholder="Электронная почта">
 					<input class="form-login__input" type="password" name="password" placeholder="Пароль">
@@ -38,17 +51,21 @@
 					<a class="form-login__link" href="#">Новая регистрация</a>
 				</form>
 			</div>
-			<a class="link link--basket">Пусто</a>
+			<a class="link link--basket">
+				<svg class="user-block__icon basket-icon">
+				  <use xlink:href="img/sprite.svg#basket-icon"></use>
+				</svg>Пусто
+			</a>
 		</div>
-		<section class="add-info">
-			С 10 до 20, ежедневно
-			<b class="add-info__phone">8 812 450-25-25</b>
+		<section class="add-info header__add-info">
+			С 10 до 20, ежедневно<br>
+			<b>8 812 450-25-25</b>
 		</section>
 	</header>
 	<main class="main">
 		<section class="breadcrumbs">
-			<a class="breadcrumbs__link" href="index.html">Главная</a>
-			<a class="breadcrumbs__link" href="#">Каталог</a>
+			<a class="breadcrumbs__link" href="index.html">Главная</a><span> » </span>
+			<a class="breadcrumbs__link" href="#">Каталог</a><span> » </span>
 			<a class="breadcrumbs__link breadcrumbs__link--active" href="#">Сливочное</a>
 		</section>
 		<h1 class="caption main__caption">Сливочное мороженое</h1>
@@ -64,7 +81,7 @@
 					</select>
 				</fieldset>
 				<fieldset class="group-price">
-					<legend class="legend group-price__legend">Цена:</legend>
+					<p class="legend group-price__legend">Цена:</p>
 					<div class="slider-price">
 						<input class="slider-price__input slider-price__input--min" type="text" name="price-min">
             <input class="slider-price__input slider-price__input--big" type="text" name="price-big">
@@ -73,18 +90,20 @@
           </div>
 				</fieldset>
 				<fieldset class="group-fat-content">
-					<legend class="legend group-fat-content__legend">Жирность:</legend>
-					<input class="group-fat-content__input" type="radio" name="fat-content" value="zero" id="zero">
-					<label class="group-fat-content__label" for="zero">0%</label>
-					<input class="group-fat-content__input" type="radio" name="fat-content" value="ten" id="ten" checked>
-					<label class="group-fat-content__label" for="ten">10%</label>
-					<input class="group-fat-content__input" type="radio" name="fat-content" value="until-thirty" id="until-thirty">
-					<label class="group-fat-content__label" for="until-thirty">до 30%</label>
-					<input class="group-fat-content__input" type="radio" name="fat-content" value="after-thirty" id="after-thirty">
-					<label class="group-fat-content__label" for="after-thirty">выше 30%</label>
+					<p class="legend group-fat-content__legend">Жирность:</p>
+					<div class="group-fat-content__wrapper">
+						<input class="group-fat-content__input" type="radio" name="fat-content" value="zero" id="zero">
+						<label class="group-fat-content__label" for="zero">0%</label>
+						<input class="group-fat-content__input" type="radio" name="fat-content" value="ten" id="ten" checked>
+						<label class="group-fat-content__label" for="ten">10%</label>
+						<input class="group-fat-content__input" type="radio" name="fat-content" value="until-thirty" id="until-thirty">
+						<label class="group-fat-content__label" for="until-thirty">до 30%</label>
+						<input class="group-fat-content__input" type="radio" name="fat-content" value="after-thirty" id="after-thirty">
+						<label class="group-fat-content__label" for="after-thirty">выше 30%</label>
+					</div>
 				</fieldset>
 				<fieldset class="group-filler">
-					<legend class="legend group-fille__legend">Наполнители:</legend>
+					<p class="legend group-fille__legend">Наполнители:</p>
 					<input class="group-filler__input" type="checkbox" name="chocolate" value="chocolate" id="chocolate" checked>
 					<label class="group-filler__label" for="chocolate">шоколадные</label>
 					<input class="group-filler__input" type="checkbox" name="sugar-powder" value="sugar-powder" id="sugar-powder" checked>
@@ -102,76 +121,100 @@
 		<section class="goods">
 			<ul class="goods__list">
 				<li class="goods__item">
-					<img class="goods__img" src="img/product-1.jpg.jpg" alt="фото мороженного" width="267" height="267">
+					<img class="goods__img" src="img/product-1.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">310 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочное с апельсиновым джемом и цитрусовой стружкой</h2>
-					<a class="bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочное с апельсиновым джемом и цитрусовой стружкой</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 				<li class="goods__item">
 					<img class="goods__img" src="img/product-2.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">380 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочно-кофейное с кусочками шоколада</h2>
-					<a class="bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочно-кофейное с кусочками шоколада</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 				<li class="goods__item">
 					<img class="goods__img" src="img/product-3.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">355 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочно-клубничное с присыпкой из белового шоколада</h2>
-					<a class="bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочно-клубничное с присыпкой из белового шоколада</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 				<li class="goods__item">
 					<img class="goods__img" src="img/product-4.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">415 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочное крем-брюле с карамельной подливкой</h2>
-					<a class=" bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочное крем-брюле с карамельной подливкой</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 				<li class="goods__item">
 					<img class="goods__img" src="img/product-5.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">325 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочное c брусничным джемом</h2>
-					<a class="bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочное c брусничным джемом</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 				<li class="goods__item">
 					<img class="goods__img" src="img/product-6.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">410 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочно-черничное с цельными ягодами черники</h2>
-					<a class="bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочно-черничное с цельными ягодами черники</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 				<li class="goods__item">
 					<img class="goods__img" src="img/product-7.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">375 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочно-лимонное с карамельной присыпкой</h2>
-					<a class="bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочно-лимонное с карамельной присыпкой</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 				<li class="goods__item">
 					<img class="goods__img" src="img/product-8.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">320 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочное с шоколадной стружкой</h2>
-					<a class="bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочное с шоколадной стружкой</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 				<li class="goods__item">
 					<img class="goods__img" src="img/product-9.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">440 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочно-ванильное с кусочками шоколада</h2>
-					<a class="bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочно-ванильное с кусочками шоколада</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 				<li class="goods__item">
 					<img class="goods__img" src="img/product-10.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">435 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочное с ментоловым сиропом</h2>
-					<a class="bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочное с ментоловым<br> сиропом</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 				<li class="goods__item"> 
 					<img class="goods__img" src="img/product-11.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">455 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочное с кусочками черного шоколада</h2>
-					<a class="bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочное с кусочками черного шоколада</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 				<li class="goods__item">
 					<img class="goods__img" src="img/product-12.jpg" alt="фото мороженного" width="267" height="267">
 					<b class="goods__price">420 <span>&#8381;</span>/кг</b>
-					<h2 class="goods__name">Сливочное с мятным сиропом</h2>
-					<a class="bnt goods__link" href="#">Быстрый просмотр</a>
+					<h2 class="goods__title">Сливочное с мятным сиропом</h2>
+					<div class="background-hover">
+						<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
+					</div>
 				</li>
 			</ul>
 		</section>
@@ -188,21 +231,34 @@
 		</section>
 	</main>
 	<footer class="footer">
-		<section class="social">
-			<a class="social__link social__link--twitter" href="#">twitter</a>
-			<a class="social__link social__link--inst" href="#">instagramm</a>
-			<a class="social__link social__link--facebook" href="#">facebook</a>
-			<a class="social__link social__link--vk" href="#">vk</a>
+		<section class="social footer__social">
+			<a class="social__link social__link--twitter" href="#">twitter
+				<svg class="social__icon"><use xlink:href="img/sprite.svg#twitter-icon"></use></svg>
+			</a>
+			<a class="social__link social__link--inst" href="#">instagramm
+				<svg class="social__icon"><use xlink:href="img/sprite.svg#instagramm-icon"></use></svg>
+			</a>
+			<a class="social__link social__link--facebook" href="#">facebook
+				<svg class="social__icon"><use xlink:href="img/sprite.svg#facebook-icon"></use></svg>
+			</a>
+			<a class="social__link social__link--vk" href="#">vk
+				<svg class="social__icon"><use xlink:href="img/sprite.svg#vk-icon"></use></svg>
+			</a>
 		</section>
-		<div class="info-company">
-			<a class="info-company__link info-company__link--icon-heart" href="#">Для поставщиков</a>
-			<a class="info-company__link" href="#">О производстве</a>
+		<div class="info-company footer__info-company">
+			<a class="info-company__link info-company__link--strong" href="#">
+				<svg class="info-company__icon"><use xlink:href="img/sprite.svg#heard-icon"></use></svg>
+				Для поставщиков
+			</a>
 			<a class="info-company__link" href="#">Наши документы</a>
+			<a class="info-company__link" href="#">О производстве</a>
 			<a class="info-company__link" href="#">Экологические стандарты</a>
 		</div>
 		<section class="copyright">
-			<a class="copyright__logo" href="#">html academy</a>
-			<p class="copyright__text">Сделано в <a href="#">HTML academy</a> &#169; 2017</p>
+			<a class="copyright__logo" href="#">
+				<svg class="copyright__icon"><use xlink:href="img/sprite.svg#htmlacademy-icon"></use></svg>
+			</a>
+			<p class="copyright__text">Сделано в <a class="copyright__link" href="#">HTML academy</a> &#169; 2017</p>
 		</section>
 	</footer>
 </body>

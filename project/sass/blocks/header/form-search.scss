@@ -1,0 +1,56 @@
+.form-search {
+	position: relative;
+	margin-left: auto;
+}
+
+.form-search__decoration {
+	width: 33px;
+	height: 33px;
+	margin-left: 70px;
+
+	border-radius: 33px;
+	font-size: 0;
+	background: rgba(255, 255, 255, 0.3);
+}
+
+.search-icon {
+    width: 19px;
+   	height: 17px;
+    margin-top: 8px;
+    margin-left: 8px;
+    fill: #ffffff;
+}
+
+.form-search__inner {
+	visibility: hidden;
+	position: absolute;
+	padding: 20px 15px;
+	top: 35px;
+    right: 0px;
+
+	background: #f8f7f4;
+	border-radius: 8px;
+	z-index: 1;
+}
+
+/*всплытие формы*/
+.form-search__decoration:hover {
+	cursor: pointer;
+	background: #f8f7f4;
+}
+
+.form-search__decoration:hover .search-icon {
+	fill: #000000;
+}
+
+.form-search:hover .form-search__inner {
+	visibility: visible;
+}
+
+.form-search__input {
+	width: 300px;
+	height: 40px;
+	padding-left: 10px;
+
+	border-radius: 5px;
+}

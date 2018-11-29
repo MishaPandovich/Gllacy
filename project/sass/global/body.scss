@@ -1,0 +1,58 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #849d8f;
+	color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+}
+
+a:hover {
+	color: #e84d37;
+}
+
+a.bnt:hover {
+	color: #ffffff;
+}
+
+.bnt {
+	font-weight: 700;
+	font-size: 18px;
+    line-height: 24px;
+	color: #ffffff;
+	cursor: pointer;
+	text-decoration: none;
+	border: none;
+	background: #ee5e3f;
+	background: linear-gradient(to top, #e74b36, #f26843);
+	box-shadow: 0px 4px 14px -5px #000000;
+}
+
+.bnt:hover,
+.bnt:focus {
+	background: #f28066;
+	background: linear-gradient(to top, #ed715f, #f58669);
+	border-bottom: 2px solid #ac1000;
+	outline: none;
+	box-shadow: none;
+}
+
+.bnt:active {
+	background: linear-gradient(to top, #f26843, #e74b36);
+	border-top: 2px solid #ac1000;
+	border-bottom: none;
+	box-shadow: none;
+}
+
+.int::-webkit-input-placeholder {color:#d3d3d2;}
+.int::-moz-placeholder          {color:#d3d3d2;}/* Firefox 19+ */
+.int:-moz-placeholder           {color:#d3d3d2;}/* Firefox 18- */
+.int:-ms-input-placeholder      {color:#d3d3d2;}
+
+.int {
+	border: none;
+    border: 1px solid #d3d3d2;
+}

@@ -1,0 +1,90 @@
+.hit-goods {
+	width: 1150px;
+	padding: 0 25px;
+	margin: 0 auto;
+}
+
+.hit-goods__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	margin-top: 20px;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.hit-goods__item {
+	position: relative;
+	width: 270px;
+	cursor: pointer;
+} 
+
+.hit-goods__item::before {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 0;
+    left: 0;
+	width: 64px;
+	height: 64px;
+	background: url('../img/hits-icon.svg') no-repeat;
+}
+
+.hit-goods__img {
+	width: 267px;
+	height: 267px;
+
+	border-radius: 100%;
+}
+
+.hit-goods__price {
+	position: absolute;
+	top: 210px;
+	left: 0;
+
+	font-weight: 700px;
+	font-size: 45px;
+	line-height: 45px;
+}
+
+.hit-goods__price span {
+	font-size: 30px;
+	text-transform: lowercase;
+}
+
+.hit-goods__title {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	
+	text-decoration: underline;
+	text-underline-position: under;
+	text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+.background-hover {
+	position: absolute;
+	display: none;
+    top: -10px;
+    left: -17px;
+    width: 300px;
+    height: 415px;
+    z-index: 2;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.background-hover__link {
+	position: absolute;
+    padding: 10px 15px;
+    bottom: 20px;
+    left: 60px;
+    border-radius: 30px;
+}
+
+.hit-goods__item:hover .background-hover {
+	display: block;
+}

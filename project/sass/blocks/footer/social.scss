@@ -1,0 +1,22 @@
+.social__link {
+	display: inline-block;
+	font-size: 0;
+}
+
+.social__icon {
+	width: 32px;
+    height: 32px;
+    margin-right: 6px;
+    fill: rgba(255, 255, 255, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    border-radius: 100%;
+}
+
+.social__icon:hover,
+.social__icon:focus {
+	fill: rgba(255, 255, 255, 1);
+}
+
+.social__icon:active {
+	fill: rgba(233, 233, 233, 1);
+}

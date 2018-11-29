@@ -1,0 +1,67 @@
+.user-block {
+	display: flex;
+	margin-left: 10px;
+}
+
+.form-login {
+	display: none;
+}
+
+.link {
+	position: relative;
+	display: inline-block;
+	padding: 10px;
+    padding-left: 45px;
+    padding-right: 15px;
+
+	font-size: 14px;
+	line-height: 16px;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 25px;
+	box-sizing: border-box;
+}
+
+.link--basket {
+	margin-left: 10px;
+}
+
+.user-block__icon {
+	position: absolute;
+    left: 15px;
+    top: 7px;
+
+    fill: #ffffff;
+}
+
+.login-icon {
+	width: 21px;
+	height: 19px;
+}
+
+.login-icon:hover {
+	fill: #000000;
+}
+
+.basket-icon {
+	width: 21px;
+	height: 20px;
+	fill: #ffffff;
+   	color: transparent;
+}
+
+/*стили для активной кнопки*/
+.link:hover {
+	cursor: pointer;
+	color: #000000;
+	background: #f8f7f4;
+}
+
+.link:hover .login-icon {
+	fill: #000000;
+}
+
+/*этот стиль должен активироваться при появлении товара, без него он неактивен*/
+.link:hover .basket-icon {
+	fill: #000000;
+	color: #E84D37;
+}

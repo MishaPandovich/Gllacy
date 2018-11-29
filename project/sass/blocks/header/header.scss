@@ -1,0 +1,35 @@
+.header {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	justify-content: space-between;
+	
+	width: 1150px;
+	padding: 0 25px;
+	margin: 0 auto;
+}
+
+.header__main-nav {
+	margin-top: 10px;
+}
+
+.header__user-block {
+	margin-left: auto;
+}
+
+.header__add-info {
+	position: absolute;
+	top: 75px;
+    right: 25px;
+	width: 170px;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+}
+
+.header__add-info b {
+	font-size: 22px;
+	line-height: 24px;
+}

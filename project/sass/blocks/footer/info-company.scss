@@ -1,0 +1,45 @@
+.info-company {
+	width: 340px;
+}
+
+.info-company__link {
+	display: inline-block;
+	margin-left: 25px;
+    margin-bottom: 5px;
+
+	font-size: 13px;
+	line-height: 18px;
+	color: #ffffff;
+	text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.info-company__link:nth-last-child(1) {
+	margin-left: 38px;
+}
+
+.info-company__link:hover {
+	border-bottom: 1px solid #e84d37;
+}
+
+.info-company__link--strong {
+	position: relative;
+	font-weight: 700;
+}
+
+.info-company__icon {
+	position: absolute;
+    top: 4px;
+    left: -22px;
+	width: 17px;
+	height: 16px;
+	fill: #ffffff;
+}
+
+.info-company__link--strong:hover .info-company__icon {
+	fill: #ea5139;
+}
+
+.info-company__link--strong:focus .info-company__icon {
+	fill: #ea5139;
+}

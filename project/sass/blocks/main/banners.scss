@@ -1,0 +1,53 @@
+.banners {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 1150px;
+	padding: 0 25px;
+	margin: 0 auto;
+	margin-top: -235px;
+}
+
+.banner {
+	position: relative;
+	width: 560px;
+	height: 230px;
+	padding-top: 20px;
+	margin-bottom: 20px;
+
+	border-radius: 15px;
+	box-sizing: border-box;
+}
+
+.banner__caption {
+	margin-left: 20px;
+	
+	font-weight: 700;
+	font-size: 35px;
+	line-height: 41px;
+}
+
+.banner__text {
+	margin-left: 20px;
+    margin-right: 15px;
+
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.banner--theme-malines {
+	background: #c73961 url('../img/banner-malines.jpg') no-repeat;
+}
+
+.banner--theme-chocolate {
+	background: #9d7e70 url('../img/banner-chocolad.jpg') repeat;
+}
+
+.banner__link {
+	position: absolute;
+    bottom: 22px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 40px;
+}

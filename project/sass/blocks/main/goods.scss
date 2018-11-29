@@ -1,0 +1,65 @@
+.goods {
+	width: 1150px;
+	margin: 0 auto;
+
+	border: 1px solid red;
+}
+
+.goods__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.goods__item {
+	position: relative;
+	width: 270px;
+	margin-right: 23px;
+	margin-bottom: 30px;
+	cursor: pointer;
+} 
+
+.goods__item:nth-child(4n) {
+	margin-right: 0;
+}
+
+.goods__img {
+	width: 267px;
+	height: 267px;
+
+	border-radius: 100%;
+}
+
+.goods__price {
+	position: absolute;
+	top: 210px;
+	left: 0;
+
+	font-weight: 700px;
+	font-size: 45px;
+	line-height: 45px;
+}
+
+.goods__price span {
+	font-size: 30px;
+	text-transform: lowercase;
+}
+
+.goods__title {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	
+	text-decoration: underline;
+	text-underline-position: under;
+	text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+/*стили .background-hover находятся в папке hit-goods*/
+.goods__item:hover .background-hover {
+	display: block;
+}
