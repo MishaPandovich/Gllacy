@@ -12,7 +12,9 @@ MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
 ),
 
 myPlacemarkWithContent = new ymaps.Placemark([59.938631, 30.323055], {
-}, {
+    balloonContent: 'Чтобы посмотреть более подробный маршрут,<br> нажмите ссылку «Как добраться» в левом нижнем углу'
+    }, 
+    {
     // Опции.
     // Необходимо указать данный тип макета.
     iconLayout: 'default#imageWithContent',

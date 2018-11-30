@@ -377,7 +377,7 @@ a.bnt:hover {
   height: 881px;
   margin: 0 auto;
   margin-top: -80px;
-  z-index: -1; }
+  z-index: -2; }
 
 .slider__item--active {
   display: block; }
@@ -421,14 +421,16 @@ a.bnt:hover {
   font-size: 0; }
 
 .slider__toggle:hover {
+  outline: none;
   background: rgba(255, 255, 255, 0.3);
   cursor: pointer; }
 
 .slider__toggle--active {
-  background: #ffffff; }
+  background-color: #ffffff;
+  outline: none; }
 
 .slider__toggle--active:hover {
-  background: #ffffff;
+  background-color: #ffffff;
   cursor: default; }
 
 .filter {
