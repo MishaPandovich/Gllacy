@@ -2,7 +2,14 @@ var toggles = $('.slider__toggles');
 var $slide = $('.slider__item');
 var $background = $('body');
 
+
+/*Делать рефакторинг*/
+
 toggles.on('click', 'button', function() {
+	/*снятие фоновой анимации*/
+	$('.fon').removeClass('fon');
+	i = 3;
+
 	/*поиск слайда, который показан на данный момент и удаление у него класса, отвечающего за показ*/
 	$('.slider__item--active').removeClass('slider__item--active');
 	/*поиск предыдущего активного переключателя и удаление у него класса active*/
@@ -30,3 +37,31 @@ toggles.on('click', 'button', function() {
 		return;
 	}
 });
+
+/*пишем анимацию*/
+var i =0;
+
+function animate() {
+	if (i < 3) {
+		animateSlide(i);
+		setTimeout(animate, 5000);
+    i++;
+	} 
+    
+  if (i==3) {
+  	i = 0;
+  }
+}
+
+var $toggle = $('.slider__toggle'); 
+
+/*делать потом анимацию плавный переход между мороженным*/
+function animateSlide(i) {
+	$('.slider__item--active').removeClass('slider__item--active');
+	$slide.eq(i).addClass('slider__item--active');
+
+	$('.slider__toggle--active').removeClass('slider__toggle--active');
+	$toggle.eq(i).addClass('slider__toggle--active');
+}
+
+animate();

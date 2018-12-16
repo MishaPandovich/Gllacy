@@ -61,3 +61,30 @@ a.bnt:hover {
 	width: 1150px;
 	margin: 0 auto;
 }
+
+.fon{
+  animation: background 15S linear infinite ;
+  transition: background .5s linear ;
+}
+
+@keyframes background{
+  0%{
+    background: #849d8f;
+  }
+  45%
+  {
+    background: #8a97a7;
+  }
+
+  75% {
+	background: #9d8b84;	
+  }
+
+  95%{
+    background: #9d8b84;
+  }
+
+  100% {
+	background: #849d8f;
+  }
+}

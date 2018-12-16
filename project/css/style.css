@@ -75,6 +75,37 @@ a.bnt:hover {
   width: 1150px;
   margin: 0 auto; }
 
+.fon {
+  -webkit-animation: background 15S linear infinite;
+  animation: background 15S linear infinite;
+  -webkit-transition: background .5s linear;
+  -o-transition: background .5s linear;
+  transition: background .5s linear; }
+
+@-webkit-keyframes background {
+  0% {
+    background: #849d8f; }
+  45% {
+    background: #8a97a7; }
+  75% {
+    background: #9d8b84; }
+  95% {
+    background: #9d8b84; }
+  100% {
+    background: #849d8f; } }
+
+@keyframes background {
+  0% {
+    background: #849d8f; }
+  45% {
+    background: #8a97a7; }
+  75% {
+    background: #9d8b84; }
+  95% {
+    background: #9d8b84; }
+  100% {
+    background: #849d8f; } }
+
 .header {
   position: relative;
   display: -webkit-box;
