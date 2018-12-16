@@ -1,0 +1,71 @@
+.group-price__legend {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.range-controls {
+	display: block;
+	position: relative;
+    width: 220px;
+    height: 40px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.scale {
+	position: relative;
+    top: 17px;
+    left: 20px;
+    width: 175px;
+    height: 4px;
+	background: rgba(255, 255, 255, 0.4);
+}
+
+.bar {
+	position: absolute;
+	top: 0;
+    left: 20px;
+	width: 118px;
+	height: 4px;
+	background: rgba(255, 255, 255, 0.7);
+}
+
+.range-toggle {
+	position: absolute;
+	width: 5px;
+    height: 5px;
+    background: gray;
+    border: 8px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+		background: #1c4f80;
+	}
+}
+
+.range-toggle-min {
+	top: -7px;
+	left: 12px;
+}
+
+.range-toggle-max {
+	top: -8px;
+    right: 20px;
+}
+
+.price-controls {
+	display: inline-block;
+}
+
+.price-controls__input {
+	position: relative;
+	width: 52px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+}

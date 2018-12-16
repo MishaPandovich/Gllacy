@@ -1,6 +1,8 @@
-.column-center {
-	width: 1150px;
-	margin: 0 auto;
+.different-information {
+	min-width: 1200px;
+}
+
+.different-information__column-center {
 	margin-top: 38px;
 	display: flex;
 	flex-wrap: wrap;

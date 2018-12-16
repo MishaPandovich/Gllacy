@@ -7,7 +7,7 @@ ymaps.ready(function () {
 }),
 
 // Создаём макет содержимого.
-MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+MyIconContentLayout = ymaps.templateLayoutFactory.createClass (
     '<div style="color: #000000; font-weight: bold;">$[properties.iconContent]</div>'
 ),
 

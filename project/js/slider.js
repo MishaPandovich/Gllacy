@@ -16,17 +16,17 @@ toggles.on('click', 'button', function() {
 	$slide.eq($index).addClass('slider__item--active');
 
 	if ($index == 0) {
-		$('body').css('background', '#849d8f');
+		$background.css('background', '#849d8f');
 		return;
 	}
 
 	if ($index == 1) {
-		$('body').css('background', '#8a97a7');
+		$background.css('background', '#8a97a7');
 		return;
 	}
 
 	if ($index == 2) {
-		$('body').css('background', '#9d8b84');
+		$background.css('background', '#9d8b84');
 		return;
 	}
 });
