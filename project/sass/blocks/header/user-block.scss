@@ -3,10 +3,6 @@
 	margin-left: 10px;
 }
 
-.form-login {
-	display: none;
-}
-
 .link {
 	position: relative;
 	display: inline-block;
@@ -33,6 +29,10 @@
     fill: #ffffff;
 }
 
+.login {
+	position: relative;
+}
+
 .login-icon {
 	width: 21px;
 	height: 19px;
@@ -49,19 +49,39 @@
    	color: transparent;
 }
 
-/*стили для активной кнопки*/
-.link:hover {
+.link--active {
 	cursor: pointer;
 	color: #000000;
 	background: #f8f7f4;
 }
 
-.link:hover .login-icon {
+.link--active .login-icon {
+	fill: #000000;
+}
+
+/*стили для активной кнопки*/
+.link--login:hover {
+	cursor: pointer;
+	color: #000000;
+	background: #f8f7f4;
+}
+
+.link--login:hover .login-icon {
 	fill: #000000;
 }
 
 /*этот стиль должен активироваться при появлении товара, без него он неактивен*/
-.link:hover .basket-icon {
+.link--basket:hover {
+	color: #ffffff;
+	cursor: default;
+}
+
+.link--active:hover {
+	color: #000000;
+	background: #f8f7f4;
+}
+
+.link--active .basket-icon {
 	fill: #000000;
 	color: #E84D37;
 }

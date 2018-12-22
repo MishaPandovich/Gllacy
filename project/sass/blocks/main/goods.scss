@@ -1,14 +1,13 @@
 .goods {
 	width: 1150px;
 	margin: 0 auto;
-
-	border: 1px solid red;
 }
 
 .goods__list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	margin-top: 30px;
 
 	display: flex;
 	flex-wrap: wrap;
@@ -18,7 +17,7 @@
 	position: relative;
 	width: 270px;
 	margin-right: 23px;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 	cursor: pointer;
 } 
 
@@ -37,8 +36,7 @@
 	position: absolute;
 	top: 210px;
 	left: 0;
-
-	font-weight: 700px;
+	font-family: 'Roboto Bold', 'Arial', sans-serif;
 	font-size: 45px;
 	line-height: 45px;
 }
@@ -49,7 +47,7 @@
 }
 
 .goods__title {
-	font-weight: 500;
+	font-family: 'Roboto Medium', 'Arial', sans-serif;
 	font-size: 16px;
 	line-height: 20px;
 	text-align: center;

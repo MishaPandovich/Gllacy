@@ -34,17 +34,16 @@
 }
 
 /*всплытие формы*/
-.form-search__decoration:hover {
-	cursor: pointer;
+.form-search:hover .form-search__inner {
+	visibility: visible;
+}
+
+.form-search:hover .form-search__decoration {
 	background: #f8f7f4;
 }
 
-.form-search__decoration:hover .search-icon {
+.form-search:hover .search-icon {
 	fill: #000000;
-}
-
-.form-search:hover .form-search__inner {
-	visibility: visible;
 }
 
 .form-search__input {

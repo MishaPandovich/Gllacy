@@ -1,0 +1,55 @@
+.modal-login {
+	position: absolute;
+	display: none;
+	top: 38px;
+    right: 0;
+	width: 278px;
+	height: 215px;
+	padding: 20px 17px;
+
+	box-sizing: border-box;
+	background: #f8f7f4;
+	z-index: 1;
+	border-radius: 10px;
+}
+
+.form-login {
+	position: relative;
+}
+
+.form-login__input {
+	width: 100%;
+	padding: 15px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid #d3d3d2;
+
+	box-sizing: border-box;
+}
+
+.form-login__button {
+	position: absolute;
+	bottom: 0px;
+	left: 0; 
+	padding: 10px 25px;
+    border-radius: 25px;
+}
+
+.wrapper__link {
+	display: inline-block;
+    width: 130px;
+	margin-top: -10px;
+	margin-left: 120px;
+}
+
+.form-login__link {
+	display: inline-block;
+    color: #323232;
+    font-size: 13px;
+    line-height: 24px;
+    margin-bottom: -10px;
+}
+
+.modal-show {
+	display: block;
+}

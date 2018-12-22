@@ -1,14 +1,11 @@
-var toggles = $('.slider__toggles');
+var $toggles = $('.slider__toggles');
 var $slide = $('.slider__item');
 var $background = $('body');
 
-
-/*Делать рефакторинг*/
-
-toggles.on('click', 'button', function() {
+$toggles.on('click', 'button', function() {
 	/*снятие фоновой анимации*/
-	$('.fon').removeClass('fon');
-	i = 3;
+	$background.removeClass('background-color');
+	numberSlide = NUMBER_SLIDES;
 
 	/*поиск слайда, который показан на данный момент и удаление у него класса, отвечающего за показ*/
 	$('.slider__item--active').removeClass('slider__item--active');
@@ -26,42 +23,39 @@ toggles.on('click', 'button', function() {
 		$background.css('background', '#849d8f');
 		return;
 	}
-
 	if ($index == 1) {
 		$background.css('background', '#8a97a7');
 		return;
 	}
-
 	if ($index == 2) {
 		$background.css('background', '#9d8b84');
 		return;
 	}
 });
 
-/*пишем анимацию*/
-var i =0;
+/*анимация*/
+var NUMBER_SLIDES = 3;  
 
-function animate() {
-	if (i < 3) {
-		animateSlide(i);
-		setTimeout(animate, 5000);
-    i++;
+var numberSlide = 0;
+function slideAnimations() {
+	if (numberSlide < NUMBER_SLIDES) {
+		animateSlide(numberSlide);
+		setTimeout(slideAnimations, 5000);
+    numberSlide++;
 	} 
     
-  if (i==3) {
-  	i = 0;
+  if (numberSlide == NUMBER_SLIDES) {
+  	numberSlide = 0;
   }
 }
 
-var $toggle = $('.slider__toggle'); 
-
-/*делать потом анимацию плавный переход между мороженным*/
-function animateSlide(i) {
+var $togglesItem = $('.slider__toggle')
+function animateSlide(numberSlide) {
 	$('.slider__item--active').removeClass('slider__item--active');
-	$slide.eq(i).addClass('slider__item--active');
+	$slide.eq(numberSlide).addClass('slider__item--active');
 
 	$('.slider__toggle--active').removeClass('slider__toggle--active');
-	$toggle.eq(i).addClass('slider__toggle--active');
+	$togglesItem.eq(numberSlide).addClass('slider__toggle--active');
 }
 
-animate();
+slideAnimations();

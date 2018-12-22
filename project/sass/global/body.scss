@@ -7,7 +7,7 @@ body {
 body {
 	background: #849d8f;
 	color: #ffffff;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'Arial', sans-serif;
 }
 
 a:hover {
@@ -19,7 +19,7 @@ a.bnt:hover {
 }
 
 .bnt {
-	font-weight: 700;
+	font-family: 'Roboto Bold', 'Arial', sans-serif;
 	font-size: 18px;
     line-height: 24px;
 	color: #ffffff;
@@ -62,7 +62,7 @@ a.bnt:hover {
 	margin: 0 auto;
 }
 
-.fon{
+.background-color{
   animation: background 15S linear infinite ;
   transition: background .5s linear ;
 }
@@ -71,20 +71,30 @@ a.bnt:hover {
   0%{
     background: #849d8f;
   }
-  45%
+  38%
   {
     background: #8a97a7;
   }
 
-  75% {
+  66% {
 	background: #9d8b84;	
   }
 
-  95%{
+  98%{
     background: #9d8b84;
   }
 
-  100% {
-	background: #849d8f;
+  100%{
+    background: #849d8f;
   }
+}
+
+.overlay::before {
+	content: "";
+	display: block;
+	position: fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    z-index: 10;
 }

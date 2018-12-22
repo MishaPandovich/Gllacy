@@ -5,13 +5,9 @@
 	<title>Glasy</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-	<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.js"></script>
-	<script type="text/javascript" src="js/map-pin.js" async></script>
-	<script type="text/javascript" src="js/slider.js" async></script>
 </head>
-<body class="fon">
+<body class="background-color">
 	<header class="header">
 		<nav class="main-nav header__main-nav">
 			<a class="logo main-nav__logo" href="#"><img class="logo__img" src="img/logo.png" alt="Glasy" width="154" height="64"></a>
@@ -42,13 +38,17 @@
 				<a class="link link--login">
 					<svg class="user-block__icon login-icon"><use xlink:href="img/sprite.svg#login-icon"></use></svg>Вход
 				</a>
-				<form class="form-login" action="#" method="get">
-					<input class="form-login__input" type="text" name="email" placeholder="Электронная почта">
-					<input class="form-login__input" type="password" name="password" placeholder="Пароль">
-					<button class="form-login__button" type="submit">Войти</button>
-					<a class="form-login__link" href="#">Забыли пароль?</a>
-					<a class="form-login__link" href="#">Новая регистрация</a>
-				</form>
+				<section class="modal-login moda-show">
+					<form class="form-login" action="#" method="get">
+						<input class="form-login__input" type="text" name="email" placeholder="Электронная почта">
+						<input class="form-login__input" type="password" name="password" placeholder="Пароль">
+						<button class="bnt form-login__button" type="submit">Войти</button>
+						<div class="wrapper__link">
+							<a class="form-login__link" href="#">Забыли пароль?</a>
+							<a class="form-login__link" href="#">Новая регистрация</a>
+						</div>
+					</form>
+				</section>
 			</div>
 			<a class="link link--basket">
 				<svg class="user-block__icon basket-icon"><use xlink:href="img/sprite.svg#basket-icon"></use></svg>Пусто
@@ -205,19 +205,27 @@
 				<a class="copyright__logo" href="#">
 					<svg class="copyright__icon"><use xlink:href="img/sprite.svg#htmlacademy-icon"></use></svg>
 				</a>
-				<p class="copyright__text">Сделано в <a class="copyright__link" href="#">HTML academy</a> &#169; 2017</p>
+				<p class="copyright__text">Сделано в <a class="copyright__link" href="https://htmlacademy.ru/intensive/htmlcss">HTML academy</a> &#169; 2017</p>
 			</section>
 		</div>
 	</footer>
 	<section class="modal modal-feedback">
-		<p class="modal-feedback__text">Мы обязательно вам ответим!</p>
+		<p class="modal-feedback__title">Мы обязательно вам ответим!</p>
 		<form class="form-feedback" action="#" method="post">
 			<input class="form-feedback__input" type="text" name="name" placeholder="Как вас зовут?">
 			<input class="form-feedback__input" type="email" name="email" placeholder="Ваша почта для ответа?">
-			<textarea class="form-feedback__text" placeholder="Напишите что-нибудь..."></textarea>
-			<button class="form-feedback__submit" type="submit">Отправить</button>
+			<textarea class="form-feedback__textarea" placeholder="Напишите что-нибудь..."></textarea>
+			<button class="bnt form-feedback__submit" type="submit">Отправить</button>
 		</form>
-		<button class="modal__close modal-feedback__close" type="button">Закрыть модальное окно</button>
+		<button class="modal__close modal-feedback__close" type="button">Закрыть модальное окно
+			<svg class="modal__close-icon"><use xlink:href="img/sprite.svg#close-icon"></use></svg>
+		</button>
 	</section>
+	<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="js/map-pin.js"></script>
+	<script type="text/javascript" src="js/slider.js"></script>
+	<script src="js/hover-popup.js"></script>
+	<script src="js/popup-feedback.js"></script>
 </body>
 </html>

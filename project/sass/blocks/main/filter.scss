@@ -2,7 +2,7 @@
 	width: 1150px;
 	margin: 0 auto;
 
-	border: 1px solid red;
+	border: 1px solid transparent;
 
 	& fieldset {
 		border: none;
@@ -14,22 +14,23 @@
 	flex-wrap: wrap;
 }
 
-.group-sort {
-	border: none;
-}
-
-.group-sort__select {
-	width: 193px;
-	height: 37px;
-
-	border-radius: 20px;
+.legend {
+	font-size: 14px;
+	line-height: 16px;
 }
 
 /*жирность*/
+.group-fat-content {
+	margin-top: 7px;
+}
+
 .group-fat-content__wrapper {
 	display: inline-block;
-	min-width: 415px;
-	padding: 10px;
+	min-width: 410px;
+    padding: 10px 0px;
+    padding-left: 5px;
+    margin-top: -8px;
+    margin-left: -14px;
 
 	border-radius: 50px;
 	background: rgba(255, 255, 255, 0.3);
@@ -37,10 +38,10 @@
 
 .group-fat-content__label {
 	display: inline-block;
-	position: relative;
-	padding-left: 35px;
-	margin-right: 20px;
-	margin-left: 10px;
+    position: relative;
+    padding-left: 35px;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .group-fat-content__input {
@@ -50,40 +51,50 @@
 .group-fat-content__input + label::before {
 	content: "";
     position: absolute;
-    top: -5px;
-    left: -5px;
-    width: 17px;
-    height: 17px;
+    top: -3px;
+    left: -4px;
+    width: 15px;
+    height: 15px;
 
     border-radius: 100%;
     border: 4px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
 }
 
 .group-fat-content__input:checked + label::after {
 	content: "";
     position: absolute;
-    top: 2.5px;
-    left: 2.3px;
-    width: 10px;
-    height: 10px;
+    top: 5px;
+    left: 4px;
+    width: 7px;
+    height: 7px;
    
     border-radius: 100%;
     background: rgba(255, 255, 255, 0.6);
  }
 
  /*наполнения*/
+.group-filler {
+	margin-top: -15px;
+}
+
  .group-filler__wrapper {
- 	padding: 10px;
+ 	position: relative;
+ 	margin-top: -6px;
+    padding: 8px;
+    margin-left: -12px;
+    
     border-radius: 50px;
     background:  rgba(255, 255, 255, 0.3);
 }
 
 .group-filler__label {
 	display: inline-block;
-	position: relative;
-	padding-left: 35px;
-	margin-right: 20px;
-	margin-left: 10px;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .group-filler__input {
@@ -93,33 +104,52 @@
 .group-filler__input + label::before {
 	content: "";
     position: absolute;
-    top: -5px;
+    top: -3px;
     left: -5px;
     width: 17px;
     height: 17px;
 
     border: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 3px;
+    cursor: pointer;
 }
 
-.group-filler__input:checked + label::after {
-	content: "";
-    position: absolute;
-    top: 2.5px;
-    left: 2.3px;
-    width: 10px;
-    height: 10px;
-   
-    border-radius: 100%;
-    background: rgba(255, 255, 255, 0.6);
+.group-filler__input:checked + label .group-filler__icon  {
+	display: block;
  }
 
+ .group-filler__icon {
+ 	display: none;
+  	position: absolute;
+	top: -4px;
+    left: -6px;
+    width: 25px;
+  	height: 25px;
+  	fill: #eef1ef;
+}
+
  .form-filter__button {
- 	margin-top: auto;
- 	color: #ffffff;
- 	height: 40px;
- 	background: rgba(255, 255, 255, 0.6);
- 	border-radius: 50px;
- 	border: none;
- 	border: 2px solid #ffffff;
+ 	margin-top: 27px;
+    padding: 0 27px;
+    color: #ffffff;
+    height: 36px;
+    border-radius: 50px;
+    border: none;
+    border: 2px solid #ffffff;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+ .form-filter__button:hover {
+    color: #000000;
+    background: #ffffff;
+}
+
+ .form-filter__button:active {
+    padding: 0 29px;
+    height: 38px;
+    border: none;
+    border-top: 2px solid #000000;
+    background: #eaeaea;
+    outline: none;
 }

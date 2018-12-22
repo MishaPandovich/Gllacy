@@ -5,7 +5,6 @@
 	<title>Glasy</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 </head>
 <body>
 	<header class="header">
@@ -39,23 +38,55 @@
 		<div class="user-block header__user-block">
 			<div class="login">
 				<a class="link link--login">
-					<svg class="user-block__icon login-icon">
-					  <use xlink:href="img/sprite.svg#login-icon"></use>
-					</svg>Вход
+					<svg class="user-block__icon login-icon"><use xlink:href="img/sprite.svg#login-icon"></use></svg>Вход
 				</a>
-				<form class="form-login" action="#" method="get">
-					<input class="form-login__input" type="text" name="email" placeholder="Электронная почта">
-					<input class="form-login__input" type="password" name="password" placeholder="Пароль">
-					<button class="form-login__button" type="submit">Войти</button>
-					<a class="form-login__link" href="#">Забыли пароль?</a>
-					<a class="form-login__link" href="#">Новая регистрация</a>
-				</form>
+				<section class="modal-login">
+					<form class="form-login" action="#" method="get">
+						<input class="form-login__input" type="text" name="email" placeholder="Электронная почта">
+						<input class="form-login__input" type="password" name="password" placeholder="Пароль">
+						<button class="bnt form-login__button" type="submit">Войти</button>
+						<div class="wrapper__link">
+							<a class="form-login__link" href="#">Забыли пароль?</a>
+							<a class="form-login__link" href="#">Новая регистрация</a>
+						</div>
+					</form>
+				</section>
 			</div>
-			<a class="link link--basket">
+			<a class="link link--basket link--active">
 				<svg class="user-block__icon basket-icon">
 				  <use xlink:href="img/sprite.svg#basket-icon"></use>
-				</svg>Пусто
+				</svg>2 товара
 			</a>
+			<section class="modal-basket">
+				<div class="added-product">
+					<button class="added-product__close" type="button">Удалить товар из корзины
+						<svg class="added-product__close-icon" viewBox="0 0 18 17"><use xlink:href="img/sprite.svg#close-icon"></use></svg>
+					</button>
+					<img class="added-product__img" src="img/small-pict.png" alt="Пломбир с апельсиновым джемом">
+					<span class="added-product__title">Пломбир с апельсиновым джемом</span>
+					<span class="added-product__characteristics">
+						<span class="added-product__weight">1,5 кг х</span>
+						<span class="added-product__price">200 руб.</span> 
+					</span>
+					<span class="added-product__total-price">300 руб.</span>
+				</div>
+				<div class="added-product">
+					<button class="added-product__close" type="button">Удалить товар из корзины
+						<svg class="added-product__close-icon" viewBox="0 0 18 17"><use xlink:href="img/sprite.svg#close-icon"></use></svg>
+					</button>
+					<img class="added-product__img" src="img/small-pict2.png" alt="Клубничный пломбир с присыпкой из белового шоколада">
+					<span class="added-product__title">Клубничный пломбир с присыпкой из белового шоколада</span>
+					<span class="added-product__characteristics">
+						<span class="added-product__weight">1,5 кг х</span>
+						<span class="added-product__price">300 руб.</span> 
+					</span>
+					<span class="added-product__total-price">450 руб.</span>
+				</div>
+				<div class="modal-basket__footer">
+					<div class="modal-basket__total-cost">Итого: <span class="cost">750</span>руб.</div>
+					<button class="bnt modal-basket__button">Оформить заказ</button>
+				</div>
+			</section>
 		</div>
 		<section class="add-info header__add-info">
 			С 10 до 20, ежедневно<br>
@@ -74,12 +105,13 @@
 				<form class="form-filter">
 					<fieldset class="group-sort">
 						<legend class="legend group-sort__legend">Сортировка:</legend>
-						<select class="group-sort__select">
-							<option class="group-sort__option">По популярности</option>
-							<option class="group-sort__option">Сначала недорогие</option>
-							<option class="group-sort__option">Сначала дорогие</option>
-							<option class="group-sort__option">По жирности</option>
-						</select>
+						<div class="group-sort__select">по популярности</div>
+						<ul class="group-sort__dropdown-list">
+							<li class="group-sort__item group-sort__item--active">по популярности</li>
+							<li class="group-sort__item">сначала недорогие</li>
+							<li class="group-sort__item">сначала дорогие</li>
+							<li class="group-sort__item">по жирности</li>
+						</ul>
 					</fieldset>
 					<fieldset class="group-price">
 						<p class="legend group-price__legend">Цена:</p>
@@ -101,7 +133,7 @@
 							<input class="group-fat-content__input" type="radio" name="fat-content" value="zero" id="zero">
 							<label class="group-fat-content__label" for="zero">0%</label>
 							<input class="group-fat-content__input" type="radio" name="fat-content" value="ten" id="ten" checked>
-							<label class="group-fat-content__label" for="ten">10%</label>
+							<label class="group-fat-content__label" for="ten">до 10%</label>
 							<input class="group-fat-content__input" type="radio" name="fat-content" value="until-thirty" id="until-thirty">
 							<label class="group-fat-content__label" for="until-thirty">до 30%</label>
 							<input class="group-fat-content__input" type="radio" name="fat-content" value="after-thirty" id="after-thirty">
@@ -112,15 +144,25 @@
 						<p class="legend group-filler__legend">Наполнители:</p>
 						<div class="group-filler__wrapper">
 							<input class="group-filler__input" type="checkbox" name="chocolate" value="chocolate" id="chocolate" checked>
-							<label class="group-filler__label" for="chocolate">шоколадные</label>
+							<label class="group-filler__label" for="chocolate">шоколадные
+								<svg class="group-filler__icon"><use xlink:href="img/sprite.svg#checked-icon"></use></svg>
+							</label>
 							<input class="group-filler__input" type="checkbox" name="sugar-powder" value="sugar-powder" id="sugar-powder" checked>
-							<label class="group-filler__label" for="sugar-powder">сахарные присыпки</label>
+							<label class="group-filler__label" for="sugar-powder">сахарные присыпки
+								<svg class="group-filler__icon"><use xlink:href="img/sprite.svg#checked-icon"></use></svg>
+							</label>
 							<input class="group-filler__input" type="checkbox" name="fruits" value="fruits" id="fruits">
-							<label class="group-filler__label" for="fruits">фрукты</label>
+							<label class="group-filler__label" for="fruits">фрукты
+								<svg class="group-filler__icon"><use xlink:href="img/sprite.svg#checked-icon"></use></svg>
+							</label>
 							<input class="group-filler__input" type="checkbox" name="syrups" value="syrups" id="syrups">
-							<label class="group-filler__label" for="syrups">сиропы</label>
+							<label class="group-filler__label" for="syrups">сиропы
+								<svg class="group-filler__icon"><use xlink:href="img/sprite.svg#checked-icon"></use></svg>
+							</label>
 							<input class="group-filler__input" type="checkbox" name="jams" value="jams" id="jams">
-							<label class="group-filler__label" for="jams">джемы</label>
+							<label class="group-filler__label" for="jams">джемы
+								<svg class="group-filler__icon"><use xlink:href="img/sprite.svg#checked-icon"></use></svg>
+							</label>
 						</div>
 					</fieldset>
 					<button class="form-filter__button" type="submit">Применить</button>
@@ -130,7 +172,7 @@
 				<ul class="goods__list">
 					<li class="goods__item">
 						<img class="goods__img" src="img/product-1.jpg" alt="фото мороженного" width="267" height="267">
-						<b class="goods__price">310 <span>&#8381;</span>/кг</b>
+						<b class="goods__price">310 &#8381;<span>/кг</span></b>
 						<h2 class="goods__title">Сливочное с апельсиновым джемом и цитрусовой стружкой</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
@@ -138,7 +180,7 @@
 					</li>
 					<li class="goods__item">
 						<img class="goods__img" src="img/product-2.jpg" alt="фото мороженного" width="267" height="267">
-						<b class="goods__price">380 <span>&#8381;</span>/кг</b>
+						<b class="goods__price">380 &#8381;<span>/кг</span></b>
 						<h2 class="goods__title">Сливочно-кофейное с кусочками шоколада</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
@@ -146,15 +188,15 @@
 					</li>
 					<li class="goods__item">
 						<img class="goods__img" src="img/product-3.jpg" alt="фото мороженного" width="267" height="267">
-						<b class="goods__price">355 <span>&#8381;</span>/кг</b>
-						<h2 class="goods__title">Сливочно-клубничное с присыпкой из белового шоколада</h2>
+						<b class="goods__price">355 &#8381;<span>/кг</span></b>
+						<h2 class="goods__title">Сливочно-клубничное с<br> присыпкойиз белового шоколада</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
 						</div>
 					</li>
 					<li class="goods__item">
 						<img class="goods__img" src="img/product-4.jpg" alt="фото мороженного" width="267" height="267">
-						<b class="goods__price">415 <span>&#8381;</span>/кг</b>
+						<b class="goods__price">415 &#8381;<span>/кг</span></b>
 						<h2 class="goods__title">Сливочное крем-брюле с карамельной подливкой</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
@@ -162,15 +204,15 @@
 					</li>
 					<li class="goods__item">
 						<img class="goods__img" src="img/product-5.jpg" alt="фото мороженного" width="267" height="267">
-						<b class="goods__price">325 <span>&#8381;</span>/кг</b>
-						<h2 class="goods__title">Сливочное c брусничным джемом</h2>
+						<b class="goods__price">325 &#8381;<span>/кг</span></b>
+						<h2 class="goods__title">Сливочное c брусничным<br> джемом</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
 						</div>
 					</li>
 					<li class="goods__item">
 						<img class="goods__img" src="img/product-6.jpg" alt="фото мороженного" width="267" height="267">
-						<b class="goods__price">410 <span>&#8381;</span>/кг</b>
+						<b class="goods__price">410 &#8381;<span>/кг</span></b>
 						<h2 class="goods__title">Сливочно-черничное с цельными ягодами черники</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
@@ -178,7 +220,7 @@
 					</li>
 					<li class="goods__item">
 						<img class="goods__img" src="img/product-7.jpg" alt="фото мороженного" width="267" height="267">
-						<b class="goods__price">375 <span>&#8381;</span>/кг</b>
+						<b class="goods__price">375 &#8381;<span>/кг</span></b>
 						<h2 class="goods__title">Сливочно-лимонное с карамельной присыпкой</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
@@ -186,7 +228,7 @@
 					</li>
 					<li class="goods__item">
 						<img class="goods__img" src="img/product-8.jpg" alt="фото мороженного" width="267" height="267">
-						<b class="goods__price">320 <span>&#8381;</span>/кг</b>
+						<b class="goods__price">320 &#8381;<span>/кг</span></b>
 						<h2 class="goods__title">Сливочное с шоколадной стружкой</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
@@ -195,14 +237,14 @@
 					<li class="goods__item">
 						<img class="goods__img" src="img/product-9.jpg" alt="фото мороженного" width="267" height="267">
 						<b class="goods__price">440 <span>&#8381;</span>/кг</b>
-						<h2 class="goods__title">Сливочно-ванильное с кусочками шоколада</h2>
+						<h2 class="goods__title">Сливочно-ванильное с<br> кусочками шоколада</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
 						</div>
 					</li>
 					<li class="goods__item">
 						<img class="goods__img" src="img/product-10.jpg" alt="фото мороженного" width="267" height="267">
-						<b class="goods__price">435 <span>&#8381;</span>/кг</b>
+						<b class="goods__price">435 &#8381;<span>/кг</span></b>
 						<h2 class="goods__title">Сливочное с ментоловым<br> сиропом</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
@@ -210,7 +252,7 @@
 					</li>
 					<li class="goods__item"> 
 						<img class="goods__img" src="img/product-11.jpg" alt="фото мороженного" width="267" height="267">
-						<b class="goods__price">455 <span>&#8381;</span>/кг</b>
+						<b class="goods__price">455 &#8381;<span>/кг</span></b>
 						<h2 class="goods__title">Сливочное с кусочками черного шоколада</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
@@ -218,7 +260,7 @@
 					</li>
 					<li class="goods__item">
 						<img class="goods__img" src="img/product-12.jpg" alt="фото мороженного" width="267" height="267">
-						<b class="goods__price">420 <span>&#8381;</span>/кг</b>
+						<b class="goods__price">420 &#8381;<span>/кг</span></b>
 						<h2 class="goods__title">Сливочное с мятным сиропом</h2>
 						<div class="background-hover">
 							<a class="bnt background-hover__link" href="#">Добавить в корзину</a>
@@ -234,8 +276,16 @@
 					<li class="pagination__item"><a class="pagination__link" href="#">4</a></li>
 					<li class="pagination__item"><a class="pagination__link" href="#">5</a></li>
 				</ul>
-				<button class="pagination__button pagination__button--next">вперед</button>
-				<button class="pagination__button pagination__button--prev">назад</button>
+				<button class="pagination__button pagination__button--next">вперед
+					<svg class="pagination__icon">
+						<use xlink:href="img/sprite.svg#left-icon"></use>
+					</svg>
+				</button>
+				<button class="pagination__button pagination__button--prev">назад
+					<svg class="pagination__icon pagination__icon--default">
+						<use xlink:href="img/sprite.svg#right-icon"></use>
+					</svg>
+				</button>
 			</section>
 		</div>
 	</main>
@@ -272,5 +322,7 @@
 			</section>
 		</div>	
 	</footer>
+	<script src="js/hover-popup.js"></script>
+	<script src="js/select.js"></script>
 </body>
 </html>
